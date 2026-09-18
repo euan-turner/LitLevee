@@ -1,0 +1,70 @@
+name: Daily literature review
+
+on:
+  schedule:
+    # Non-round minute, to reduce the chance of GitHub Actions scheduling
+    # congestion at the top of the hour (section 19).
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without posting to Slack or mutating digested_at"
+        type: boolean
+        default: false
+
+jobs:
+  run-daily-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      # The "Persist database" step pushes to the `state` branch with the
+      # default GITHUB_TOKEN -- needs write access explicitly, since many
+      # repos now default that token to read-only.
+      contents: write
+    concurrency:
+      # Never run two pipeline passes against the same state branch at once.
+      group: literature-state
+      cancel-in-progress: false
+    steps:
+      - name: Checkout code (main)
+        uses: actions/checkout@v4
+
+      - name: Checkout database state
+        uses: actions/checkout@v4
+        with:
+          ref: state
+          path: state
+
+      - name: Restore database
+        run: cp state/litagent.db litagent.db
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Run daily pipeline
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          LLM_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          EMBEDDING_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+          DATABASE_PATH: litagent.db
+        run: |
+          uv run python scripts/run_daily.py \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Persist database
+        if: ${{ !inputs.dry_run }}
+        run: |
+          cp litagent.db state/litagent.db
+          cd state
+          git config user.name "literature-agent-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add litagent.db
+          git diff --staged --quiet || git commit -m "Update litagent.db [skip ci]"
+          git push

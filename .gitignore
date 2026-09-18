@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment / secrets
+.env
+
+# Editors / OS
+.DS_Store
+
+# Test / cache
+.pytest_cache/
+.ruff_cache/
+*.log
+
+# SQLite database -- lives on the `state` branch, not main (see README.md)
+litagent.db
+

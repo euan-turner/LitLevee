@@ -1,0 +1,110 @@
+{
+  "research_direction": "mlsys-llm-serving",
+  "papers": [
+    {
+      "id": "2401.09670",
+      "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+      "source": "arxiv",
+      "arxiv_id": "2401.09670",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "prefill-decode disaggregation",
+        "scheduling"
+      ],
+      "notes": "OSDI 2024; canonical PD-disaggregation fixture."
+    },
+    {
+      "id": "2311.18677",
+      "title": "Splitwise: Efficient Generative LLM Inference Using Phase Splitting",
+      "source": "arxiv",
+      "arxiv_id": "2311.18677",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "prefill-decode disaggregation",
+        "heterogeneous serving"
+      ],
+      "notes": "ISCA 2024; phase splitting with hardware specialization."
+    },
+    {
+      "id": "opscale",
+      "title": "OpScale",
+      "source": "fixture-placeholder",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "scaling"
+      ],
+      "notes": "Populate canonical bibliographic identifier from the source chosen by the implementation."
+    },
+    {
+      "id": "2607.04181",
+      "title": "CoCoScale: Leveraging Layer-wise Scaling to Unlock the Potential of Online LLM Serving",
+      "source": "arxiv",
+      "arxiv_id": "2607.04181",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "scaling"
+      ],
+      "notes": "Layer-wise dynamic scaling; useful recent scaling fixture."
+    },
+    {
+      "id": "2510.18586",
+      "title": "Tokencake: A KV-Cache-centric Serving Framework for LLM-based Multi-Agent Applications",
+      "source": "arxiv",
+      "arxiv_id": "2510.18586",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "agentic serving",
+        "multi-agent serving"
+      ],
+      "notes": "Agent-aware KV-cache scheduling and memory management."
+    },
+    {
+      "id": "2502.09334",
+      "title": "ThunderServe: High-performance and Cost-efficient LLM Serving in Cloud Environments",
+      "source": "arxiv",
+      "arxiv_id": "2502.09334",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "heterogeneous serving",
+        "scheduling"
+      ],
+      "notes": "Heterogeneous cloud GPU/network scheduling and rescheduling."
+    },
+    {
+      "id": "thunderagent",
+      "title": "ThunderAgent",
+      "source": "fixture-placeholder",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "agentic serving"
+      ],
+      "notes": "Populate canonical bibliographic identifier from the source chosen by the implementation."
+    },
+    {
+      "id": "h-mas",
+      "title": "H-MAS",
+      "source": "fixture-placeholder",
+      "expected_category": "core",
+      "expected_subtopics": [
+        "multi-agent serving"
+      ],
+      "notes": "Populate canonical bibliographic identifier from the source chosen by the implementation."
+    }
+  ],
+  "negative_categories": [
+    "llm-training",
+    "pure-llm-architecture",
+    "quantization-without-serving",
+    "prompt-optimization",
+    "agent-planning",
+    "agent-memory-without-systems",
+    "generic-distributed-systems",
+    "gpu-kernel-optimization-without-serving"
+  ],
+  "evaluation_policy": {
+    "core": "must be directly relevant to the research direction",
+    "interesting": "relevant but not central",
+    "peripheral": "adjacent and potentially useful",
+    "irrelevant": "outside scope"
+  }
+}

@@ -1,0 +1,85 @@
+id: mlsys-llm-serving
+name: ML Systems for Efficient LLM Inference
+
+research_question: >
+  How should ML inference systems be designed and optimized to efficiently
+  serve modern LLM workloads, particularly under heterogeneous resources,
+  dynamic workloads, disaggregated execution, and emerging agentic
+  interaction patterns?
+
+scope:
+  included:
+    - LLM inference systems
+    - LLM serving
+    - prefill-decode disaggregation
+    - inference scheduling
+    - autoscaling
+    - resource allocation
+    - heterogeneous GPU serving
+    - distributed inference
+    - agentic inference systems
+    - multi-agent serving
+    - inference architectures
+  excluded:
+    - purely algorithmic improvements to model quality
+    - LLM training systems
+    - prompting techniques
+    - agent planning algorithms without a systems contribution
+    - model architecture work without an inference-systems contribution
+
+topics:
+  - prefill-decode disaggregation
+  - scaling
+  - scheduling
+  - heterogeneous serving
+  - agentic serving
+  - multi-agent serving
+  - inference architecture
+
+adjacent:
+  - LLM training systems
+  - GPU kernel optimization
+  - distributed systems
+  - operating systems
+
+methods:
+  - GPU scheduling
+  - KV cache management
+  - heterogeneous execution
+  - autoscaling
+
+priority:
+  core:
+    - LLM serving
+    - inference systems
+    - disaggregation
+    - scheduling
+    - scaling
+  interesting:
+    - agentic serving
+    - heterogeneous hardware
+    - distributed inference
+  peripheral:
+    - adjacent systems techniques
+
+venues:
+  primary:
+    - MLSys
+    - ASPLOS
+    - ISCA
+    - MICRO
+    - OSDI
+  secondary:
+    - NSDI
+    - SOSP
+    - EuroSys
+    - ATC
+
+seeds:
+  positive: []
+  negative: []
+
+monitoring:
+  enabled: true
+  frequency: daily
+  publication_window_hours: 48

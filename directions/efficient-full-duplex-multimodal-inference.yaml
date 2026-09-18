@@ -1,0 +1,74 @@
+id: efficient-full-duplex-multimodal-inference
+name: Efficient Full-Duplex Multimodal Inference Systems
+research_question: How can we design and optimize systems and architectures to enable
+  efficient full-duplex multimodal interaction models across heterogeneous hardware
+  platforms, leveraging advanced scheduling algorithms and edge-cloud collaborative
+  inference to meet real-time performance demands?
+scope:
+  included:
+  - system architectures for multimodal interaction inference
+  - full-duplex multimodal interaction models
+  - heterogeneous hardware utilization in inference
+  - scheduling algorithms for inference workloads
+  - edge-cloud collaborative inference frameworks
+  excluded:
+  - multimodal model design without systems focus
+  - single modality inference systems
+  - agent planning algorithms without systems or scheduling focus
+  - pure cloud-based inference without edge collaboration
+  - hardware design without inference systems context
+topics:
+- full-duplex multimodal interaction
+- heterogeneous hardware
+- scheduling algorithms
+- edge-cloud collaboration
+- efficient inference
+- system architectures
+adjacent:
+- multimodal machine learning models
+- hardware accelerator design for AI
+- distributed systems for machine learning
+- real-time systems
+- network optimization for edge computing
+methods:
+- heterogeneous computing
+- real-time scheduling
+- distributed inference
+- edge computing
+- cloud computing
+- collaborative inference
+priority:
+  core:
+  - full-duplex multimodal interaction
+  - heterogeneous hardware
+  - scheduling algorithms
+  - edge-cloud collaboration
+  - efficient inference
+  interesting:
+  - system architectures
+  - distributed inference
+  - real-time scheduling
+  peripheral:
+  - network optimization for edge computing
+  - hardware accelerator design
+  - agent planning algorithms
+venues:
+  primary:
+  - ACM Multimedia
+  - IEEE Transactions on Mobile Computing
+  - USENIX Symposium on Networked Systems Design and Implementation (NSDI)
+  - ACM/IEEE Symposium on Edge Computing
+  - IEEE Conference on Computer Vision and Pattern Recognition (CVPR) workshops on
+    multimodal inference
+  - International Conference on Embedded Wireless Systems and Networks (EWSN)
+  secondary:
+  - NeurIPS workshops on distributed ML
+  - ACM SIGCOMM
+  - IEEE Real-Time Systems Symposium (RTSS)
+seeds:
+  positive: []
+  negative: []
+monitoring:
+  enabled: true
+  frequency: daily
+  publication_window_hours: 48

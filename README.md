@@ -110,8 +110,9 @@ posting it, and never marks papers as already-digested.
 In production this runs once a day via
 `.github/workflows/daily-literature.yml` (cron + manual `workflow_dispatch`
 with a `dry_run` input) -- see that file for the GitHub Actions secrets it
-needs (`SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID`, `OPENAI_API_KEY`, optionally
-`SEMANTIC_SCHOLAR_API_KEY`/`OPENALEX_API_KEY`).
+needs (`SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID`, `LLM_API_KEY` -- also used for
+embeddings, see the workflow file -- optionally `SEMANTIC_SCHOLAR_API_KEY`/
+`OPENALEX_API_KEY`).
 
 ### Persisting the database across runs
 

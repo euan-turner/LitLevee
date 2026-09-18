@@ -49,8 +49,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
-          LLM_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          EMBEDDING_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          EMBEDDING_API_KEY: ${{ secrets.LLM_API_KEY }}
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
           DATABASE_PATH: litagent.db

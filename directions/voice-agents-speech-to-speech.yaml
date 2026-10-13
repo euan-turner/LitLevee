@@ -1,0 +1,114 @@
+id: voice-agents-speech-to-speech
+name: Voice Agents, Speech-to-Speech and Cascaded Voice Systems
+
+research_question: >
+  What are the system and inference requirements of real-time audio agents,
+  and how should they be architected and served -- comparing end-to-end
+  speech-to-speech and full-duplex models against cascaded ASR-LLM-TTS
+  pipelines -- to meet latency, throughput, concurrency and cost targets
+  while still supporting reasoning, retrieval and tool use?
+
+scope:
+  included:
+    - inference and serving systems for voice and audio agents
+    - latency, throughput and concurrency requirements of real-time voice interaction
+    - system architectures for speech-to-speech and full-duplex agents
+    - cascaded ASR-LLM-TTS pipelines versus end-to-end speech models, compared on systems grounds
+    - scheduling, batching and streaming execution for audio models
+    - simultaneous listening, thinking and talking as an agent design
+    - tool use, retrieval and reasoning in voice agents
+    - edge, on-device and cloud deployment of audio agents
+    - benchmarks and measurements of voice agent latency and quality under load
+  excluded:
+    - acoustic modelling, speech enhancement and signal-processing algorithms
+    - speech recognition or TTS quality work with no agent or systems angle
+    - speech tokenizer and neural codec design without an inference-cost analysis
+    - music, sound-event or other non-speech audio
+    - voice cloning, deepfake detection and speaker verification
+    - text-only LLM serving with no audio or real-time interaction aspect
+
+topics:
+  - voice agent serving
+  - speech-to-speech inference
+  - full-duplex voice agent
+  - real-time voice agent latency
+  - audio language model serving
+  - cascaded versus end-to-end voice agent
+  - simultaneous thinking and talking
+  - voice agent architecture
+
+adjacent:
+  - LLM inference systems
+  - streaming and real-time inference scheduling
+  - omni-modal model serving
+  - on-device and edge inference
+  - tool use and retrieval for spoken agents
+  - turn-taking and interruption handling
+
+methods:
+  - request scheduling and batching for streaming audio
+  - KV cache management for audio and speech tokens
+  - pipelined and disaggregated execution
+  - speculative and parallel reasoning during speech
+  - cascaded ASR-LLM-TTS
+  - end-to-end full-duplex modelling
+
+priority:
+  core:
+    - voice and audio agent serving and inference systems
+    - latency and concurrency requirements of voice agents
+    - cascaded versus end-to-end speech-to-speech architectures
+    - full-duplex agents and thinking while talking
+  interesting:
+    - tool use and retrieval in voice agents
+    - omni-modal model serving
+    - edge and on-device audio agents
+    - voice agent benchmarks
+  peripheral:
+    - streaming ASR and TTS components
+    - general LLM serving techniques
+    - speech tokenizers and codecs
+
+venues:
+  primary:
+    - Interspeech
+    - ICASSP
+    - ACL
+    - NeurIPS
+    - ICLR
+    - MLSys
+    - OSDI
+    - NSDI
+    - ASPLOS
+  secondary:
+    - EMNLP
+    - ICML
+    - NAACL
+    - IEEE SLT
+    - ASRU
+    - SOSP
+    - EuroSys
+    - ATC
+    - MICRO
+    - ISCA
+    - HPCA
+
+# Seeds are paper titles/names the user named as exemplars.
+seeds:
+  positive:
+    - Audio Interaction Model
+    - AURU
+    - MiniCPM-o 4.5
+    - Moshi
+    - MoshiRAG
+    - MURMUR
+    - VoxServe
+    - Realtime-Venus
+    - "Shanks: Simultaneous Hearing and Thinking"
+    - "STITCH: Simultaneous Thinking and Talking"
+  negative: []
+
+monitoring:
+  enabled: true
+  frequency: daily
+  publication_window_hours: 48

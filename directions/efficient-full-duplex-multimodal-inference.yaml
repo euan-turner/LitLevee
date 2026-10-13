@@ -69,6 +69,6 @@ seeds:
   positive: []
   negative: []
 monitoring:
-  enabled: true
+  enabled: false
   frequency: daily
   publication_window_hours: 48
